@@ -5,7 +5,7 @@ import Counter from './States/Counter'
 import './Style.css'
 export const App = () => {
   return (
-    <div className='d-flex flex-column align-items-center justify-content-center Mainbody gap-4'>
+    <div className=' d-flex flex-column align-items-center justify-content-center Mainbody gap-4'>
       <Events />
       <States />
       <Counter />

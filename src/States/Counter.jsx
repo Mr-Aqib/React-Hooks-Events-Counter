@@ -11,10 +11,12 @@ const Counter = () => {
         }
         else if (e.target.innerHTML == "Minus") {
             setCounter(counter - 1)
+            if (counter <= 0) {
+                setCounter(0)
+            }
+
         }
-        else if (counter <= 0) {
-            setCounter(0)
-        }
+
     }
     return (
         <>

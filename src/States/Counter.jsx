@@ -2,21 +2,29 @@ import React, { useState } from 'react'
 
 const Counter = () => {
     const [counter, setCounter] = useState(0)
-    // const Countervalue = () => {
-
-    //     setCounter(counter + 1)
-    // }
+    const Changingcounter = (e) => {
+        if (e.target.innerHTML == "Add") {
+            setCounter(counter + 1)
+        }
+        else if (e.target.innerHTML == 'Reset') {
+            setCounter(0)
+        }
+        else if (e.target.innerHTML == "Minus") {
+            setCounter(counter - 1)
+        }
+        else if (counter <= 0) {
+            setCounter(0)
+        }
+    }
     return (
         <>
-            <div className=' p-4 my-3 rounded-5  shadow mx-auto col-lg-5'>
+            <div className=' p-4 rounded-5 bg-dark  shadow mx-auto col-lg-5'>
                 <h2 className='text-center text-info'>Counter Using States</h2>
-                <h1 className='text-center'>{counter}</h1>
+                <h1 className='text-center text-white'>{counter}</h1>
                 <div className='d-flex flex-row'>
-                    <button className='d-block my-3 mx-auto  btn btn-info' onClick={() => (setCounter(counter - 1))} >Minus</button>
-                    <button className='d-block my-3 mx-auto  btn btn-danger' onClick={() => (0)}  >Reset</button>
-                    <button className='d-block my-3 mx-auto  btn btn-success' onClick={() => (setCounter(counter + 1))
-
-                    }  >Add</button>
+                    <button className='d-block my-3 mx-auto  btn btn-info' onClick={Changingcounter} >Minus</button>
+                    <button className='d-block my-3 mx-auto  btn btn-danger' onClick={Changingcounter} >Reset</button>
+                    <button className='d-block my-3 mx-auto  btn btn-success' onClick={Changingcounter}>Add</button>
                 </div>
 
 
